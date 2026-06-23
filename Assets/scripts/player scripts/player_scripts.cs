@@ -1,7 +1,11 @@
+
 using UnityEngine;
 
 public class player_scripts : MonoBehaviour
 {
+
+    [SerializeField]
+    float move_speed = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +15,6 @@ public class player_scripts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.forward * Time.deltaTime * move_speed, Space.World);
     }
 }
