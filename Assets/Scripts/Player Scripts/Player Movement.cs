@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed;
+    float moveSpeed = 5f;
     [SerializeField]
     string move_direction;
     [SerializeField]
@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         trackNumber = 0;
-        moveSpeed = 0.2f;
+        moveSpeed = 5f;
         current_track = "middle";
         move_direction = "";
         isSideMoving = false;
