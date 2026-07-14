@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 1170565}
   - component: {fileID: 1170564}
   - component: {fileID: 1170563}
+  - component: {fileID: 1170567}
   m_Layer: 0
   m_Name: coin
   m_TagString: Untagged
@@ -229,6 +230,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1170567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0e0ac7781ce3d4d9f055b5feb6a62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94078494
 GameObject:
   m_ObjectHideFlags: 0
