@@ -13,17 +13,11 @@ public class coinscript : MonoBehaviour
     {
         transform.Rotate(0, 2, 0, Space.World);
     }
-    //     void OnTriggerEnter(Collider other)
-    //     {
-    //         this.gameObject.GetComponent<Animator>().Play("coin shrink animations");
-    //     }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-    Animator animator = GetComponent<Animator>();
+        this.gameObject.GetComponent<Animator>().Play("coin shrink animations");
+        Debug.Log(":");
+    }
 
-    if (animator != null)
-    {
-        animator.Play("coin shrink animations");
-    }
-    }
+
 }

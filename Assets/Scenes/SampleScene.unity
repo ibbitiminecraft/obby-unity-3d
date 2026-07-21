@@ -257,11 +257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288695274297935163, guid: b73ed52d389886c4cbe434a42338d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3478812
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 8288695274297935163, guid: b73ed52d389886c4cbe434a42338d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.459167
+      value: 18.43
       objectReference: {fileID: 0}
     - target: {fileID: 8288695274297935163, guid: b73ed52d389886c4cbe434a42338d64b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 116160638}
   - component: {fileID: 116160637}
   - component: {fileID: 116160636}
-  - component: {fileID: 116160642}
+  - component: {fileID: 116160641}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -357,8 +357,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.6102378, y: 2.1361744, z: 1.0149212}
+  m_Center: {x: 0.07289019, y: 0.5680872, z: 0.007460594}
 --- !u!23 &116160638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116160635}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -428,31 +428,33 @@ Transform:
   - {fileID: 1205372695}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &116160642
-CharacterController:
+--- !u!54 &116160641
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116160635}
-  m_Material: {fileID: 0}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &118150409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4731548797671380, guid: 37bf6b4eaddee8d448771b63238e03d1, type: 3}
@@ -1813,6 +1815,7 @@ GameObject:
   - component: {fileID: 554429279}
   - component: {fileID: 554429278}
   - component: {fileID: 554429283}
+  - component: {fileID: 554429284}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1849,12 +1852,12 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 0, z: 0.00000008940697}
 --- !u!23 &554429280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1918,7 +1921,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.67781866, y: -0, z: -0, w: 0.7352292}
   m_LocalPosition: {x: 0, y: 1.37, z: -10.34}
-  m_LocalScale: {x: 1, y: -0.01, z: 1.0615}
+  m_LocalScale: {x: 1, y: 0.01, z: 1.0615}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1945,6 +1948,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &554429284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554429277}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2.000001, z: 1.0000004}
+  m_Center: {x: 0.000000059604645, y: 6.611313e-14, z: 9.40698}
 --- !u!1001 &561640879
 PrefabInstance:
   m_ObjectHideFlags: 0
