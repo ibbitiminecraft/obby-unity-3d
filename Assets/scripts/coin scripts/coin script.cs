@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class coinscript : MonoBehaviour
 {
+    private bool isCollected = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,10 +13,15 @@ public class coinscript : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, 2, 0, Space.World);
+        if (isCollected)
+        {
+            transform.Translate(Vector3.up * Time.deltaTime * 6, Space.World);
+        }
     }
-    void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
-        this.gameObject.GetComponent<Animator>().Play("coin shrink animations");
+        isCollected = true;
+        this.gameObject.GetComponent<Animator>().Play("coin animation");
         Debug.Log(":");
     }
 
