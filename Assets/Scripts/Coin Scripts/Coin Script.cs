@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class CoinScript : MonoBehaviour
 {
+    bool isCollected = false;
     void Update()
     {
         transform.Rotate(0,2,0 , Space.World);
+        if (isCollected)
+        {
+            transform.Translate(Vector3.up*Time.deltaTime*6,Space.World);
+        }
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collided");
+        isCollected = true;
         this.gameObject.GetComponent<Animator>().Play("Coin Shrink");
     }
 
