@@ -1,3 +1,6 @@
+using System;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     int sideSpeed;
     int trackNumber;
     float xPos;
+
+    Vector2 touchStart ;
+
+    float minSwipeDistance = 50f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        KeyBoardInput();
         transform.Translate (Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
         xPos = transform.position.x;
          if (isSideMoving == true && move_direction == "left")
@@ -51,6 +60,40 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    public void ReadSwipe()
+    {
+        if (Input.touchCount == 0) return ;
+        Touch touch = Input.GetTouch(0);
+        if (touch.phase == TouchPhase.Began)
+        {
+            touchStart = touch.position;
+        }
+        else if (touch.phase == TouchPhase.Ended)
+        {
+            Vector2 delta = touch.position - touchStart;
+            if (Math.Abs(delta.x) < minSwipeDistance) return;
+            if (Math.Abs(delta.x) < Math.Abs(delta.y)) return;
+
+            if(delta.x > 0) 
+                onClickRight();
+            else
+                onClickLeft();
+        }
+
+    }
+    public void KeyBoardInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            onClickLeft();
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            onClickRight();
+        }
+
+    }
      public void onClickLeft()
     {
         if (current_track == "middle")
