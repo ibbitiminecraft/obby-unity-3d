@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class coinscript : MonoBehaviour
 {
@@ -18,11 +19,18 @@ public class coinscript : MonoBehaviour
             transform.Translate(Vector3.up * Time.deltaTime * 6, Space.World);
         }
     }
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         isCollected = true;
         this.gameObject.GetComponent<Animator>().Play("coin animation");
         Debug.Log(":");
+        StartCoroutine(DestoryCoin());
+    }
+    IEnumerator DestoryCoin()
+    {
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
+
     }
 
 
