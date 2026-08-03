@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         KeyBoardInput();
+        ReadSwipe();
         transform.Translate (Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
         xPos = transform.position.x;
          if (isSideMoving == true && move_direction == "left")

@@ -16,6 +16,7 @@ public class CoinScript : MonoBehaviour
     {
         isCollected = true;
         this.gameObject.GetComponent<Animator>().Play("Coin Shrink");
+        uiscipt.score++;
         StartCoroutine(DeleteCoin());
     }
 
